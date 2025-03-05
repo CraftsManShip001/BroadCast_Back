@@ -30,13 +30,13 @@ SCOPES = [
 @app.get("/getCount")
 async def get_supported_count():
     creds = None
-    google_token = os.environ.get("GOOGLE_TOKEN")
+    google_token = os.getenv("GOOGLE_TOKEN")
     
     if google_token:
         creds = Credentials.from_authorized_user_info(info=json.loads(google_token))
     
     if not creds or not creds.valid:
-        client_secrets_json = os.environ.get("GOOGLE_CLIENT_SECRETS")
+        client_secrets_json = os.getenv("GOOGLE_CLIENT_SECRETS")
         
         if client_secrets_json:
             client_secrets = json.loads(client_secrets_json)
