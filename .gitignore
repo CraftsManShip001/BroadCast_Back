@@ -12,7 +12,7 @@ env/
 
 client_secrets.json
 token.json
-
+plus.py
 
 # MySQL 인증 정보와 같은 비밀번호가 포함된 파일
 config.py
